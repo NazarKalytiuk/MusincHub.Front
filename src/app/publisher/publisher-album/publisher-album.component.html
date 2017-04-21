@@ -1,0 +1,27 @@
+<md-card>
+  <md-card-title style="display:flex; align-items:center">
+    Name<button (click)="editSongOpenDialog()" md-icon-button><md-icon>edit</md-icon></button>
+    <div style="flex-grow:10"></div>
+    <md-icon>star</md-icon> <span style="font-size: 20px;">35.498</span>
+  </md-card-title>
+  <md-nav-list>
+    <md-list-item>
+      <span style="opacity:0.54">1.</span>
+      <p>Name</p>
+      <div style="flex-grow:10"></div>
+      <span style="right:flex-end; opacity:0.54">3:45</span>
+      <button (click)="editSongOpenDialog()" md-icon-button><md-icon>edit</md-icon></button>
+    </md-list-item>
+    <md-list-item>
+      <span style="opacity:0.54">1.</span>
+      <p>Namessssssssssssssssss</p>
+      <div style="flex-grow:10"></div>
+      <span style="right:flex-end; opacity:0.54">3:45</span>
+      <button (click)="editSongOpenDialog()" md-icon-button><md-icon>edit</md-icon></button>
+    </md-list-item>
+  </md-nav-list>
+  <md-card-actions style="padding: 15px; display: flex; justify-content: flex-end">
+    <button (click)="addSongOpenDialog()" color="accent" md-raised-button>Add song</button>
+    <button (click)="deleteAlbumOpenDialog()" color="accent" md-raised-button>Delete album</button>
+  </md-card-actions>
+</md-card>

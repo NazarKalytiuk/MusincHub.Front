@@ -1,0 +1,12 @@
+<nav>
+  <button md-icon-button (click)="leftsidenav.toggle()" *ngIf="showButton">
+      <md-icon>menu</md-icon>
+    </button>
+  <a md-button (click)="onClick()">
+    <span>{{ title }}</span>
+  </a>
+  <div style="display:flex; flex: 1 1 auto;"></div>
+  <button md-icon-button>
+      <md-icon>more_vert</md-icon>
+  </button>
+</nav>

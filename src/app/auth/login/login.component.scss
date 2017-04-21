@@ -1,0 +1,13 @@
+:host {
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+md-card {
+    width: 90%;
+    max-width: 480px;
+}

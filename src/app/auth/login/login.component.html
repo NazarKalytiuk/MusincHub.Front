@@ -1,0 +1,16 @@
+<md-card>
+  <md-card-title>Login</md-card-title>
+  <p>{{error}}</p>
+  <md-card-content>
+    <md-input-container style="width: 100%;">
+      <input required mdInput style="width: 100%;" [(ngModel)]="login" placeholder="Login">
+    </md-input-container>
+    <md-input-container style="width: 100%;">
+       <input required mdInput style="width: 100%;" [(ngModel)]="password" placeholder="Password">
+    </md-input-container>
+
+  </md-card-content>
+  <md-card-actions style="padding: 15px; display: flex; justify-content: flex-end">
+    <button md-raised-button color="accent" (click)='Login()'>Login</button>
+  </md-card-actions>
+</md-card>

@@ -1,0 +1,22 @@
+h1 {
+    width: 100%;
+    text-align: center;
+    font-weight: 300;
+    margin: 2rem 0;
+}
+md-card {
+    width: 90%;
+    max-width: 480px;
+}
+form {
+    padding: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    & md-input-container {
+        width: 100%;
+    }
+    & md-select {
+        width: 100%;
+        margin: 1rem 0;
+    }  
+}

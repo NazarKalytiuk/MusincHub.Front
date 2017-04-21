@@ -1,0 +1,18 @@
+<header (click)="changeMenu()">
+    <div class="subheader">
+        <!--<span class="subheader__name">Mary Jane</span>-->
+        <span class="subheader__email">
+            <span>MaryJane@gmail.com</span><i class="material-icons">{{arrowIcon}}</i>
+        </span>
+    </div>
+</header>
+<div class="content">
+    <ul class="list">
+        <li class="list__item" *ngFor="let item of menu" routerLink="/{{item.url}}" [routerLinkActive]="['is-active']" [routerLinkActiveOptions]="{exact:true}">
+            <a>
+                <i class="material-icons">{{item.icon}}</i>
+                <span>{{item.text}}</span>
+            </a>
+        </li>
+    </ul>
+</div>

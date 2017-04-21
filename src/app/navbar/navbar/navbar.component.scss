@@ -1,0 +1,18 @@
+@import "../../core/_shadows.scss";
+
+:host {
+    box-shadow: $shadow8;
+    position: relative;
+    display: flex;
+    width: 100%;
+    z-index: 10;
+    align-items: center;
+}
+nav {
+    align-items: center;
+    padding: 8px 16px;
+    display: flex;
+    width: 100%;
+    background: #00bcd4;
+    color: white;
+}

@@ -1,0 +1,17 @@
+@import "../../core/_shadows.scss";
+
+:host {
+    width: 100%;
+    box-shadow: $shadow26;
+    position: relative;
+    display: flex;
+    z-index: 10;
+    align-items: center;
+    background: #FAFAFA;
+    & span {
+        padding: 8px;
+    }
+    & audio {
+        flex-grow: 20;
+    }
+}
