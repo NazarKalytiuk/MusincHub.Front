@@ -1,6 +1,8 @@
-import { Song } from '../_model/song';
+import { ViewChild, Injectable } from '@angular/core';
+import { Song } from '../../core/models/song';
 import { PlayerService } from '../_services/player.service';
 import { Component, OnInit, ElementRef } from '@angular/core';
+
 
 @Component({
   selector: 'player-player',
@@ -8,29 +10,29 @@ import { Component, OnInit, ElementRef } from '@angular/core';
   styleUrls: ['./player.component.scss']
 })
 export class PlayerComponent implements OnInit {
-  queue: Song[];
-  currentSong: Song = new Song();
+  @ViewChild('audio') audio : ElementRef;
+  player : HTMLMediaElement;
+  queue: Array<Song>;
+  currentSong: any;
   currentSongIndex: number;
-  player: HTMLMediaElement;
-  constructor(private _playerService: PlayerService, private el: ElementRef) { }
+  constructor(private _playerService: PlayerService) { }
 
   ngOnInit() {
-    this.player = this.el.nativeElement.getElementsByTagName('audio')[0];
-    console.log(this.player);
-    this.queue = this._playerService.getMusic();
+    this.player = this.audio.nativeElement;
+    this.currentSong = { id: '0', name: '', albumId: '', url: '' };
 
     this._playerService.getMessage()
       .filter(c => this.currentSong === c)
-      .filter(c => c.IsPlaying === false)
+      .filter(c => c.isPlaying === false)
       .subscribe(c => this.player.pause());
 
     this._playerService.getMessage()
       .filter(c => this.currentSong === c)
-      .filter(c => c.IsPlaying === true)
+      .filter(c => c.isPlaying === true)
       .subscribe(c => this.player.play());
 
     this._playerService.getMessage()
-      .filter(c => this.currentSong.Id !== c.Id)
+      .filter(c => this.currentSong.id !== c.id)
       .subscribe(c => {
         this.currentSong = c;
         this.player.load();
@@ -38,19 +40,19 @@ export class PlayerComponent implements OnInit {
       });
     this.currentSongIndex = 0;
   }
-  getNextSong() {
-    if (this.currentSongIndex + 1 < this.queue.length) {
-      this.currentSong = this.queue[this.currentSongIndex + 1];
-      this.currentSongIndex += 1;
-    } else {
-      this.currentSong = this.queue[0];
-      this.currentSongIndex = 0;
-    }
-  }
-  onEnded() {
-    this.getNextSong();
-    this.player.load();
-    this.player.play();
-  }
+  // getNextSong() {
+  //   if (this.currentSongIndex + 1 < this.queue.length) {
+  //     this.currentSong = this.queue[this.currentSongIndex + 1];
+  //     this.currentSongIndex += 1;
+  //   } else {
+  //     this.currentSong = this.queue[0];
+  //     this.currentSongIndex = 0;
+  //   }
+  // }
+  // onEnded() {
+  //   this.getNextSong();
+  //   this.player.load();
+  //   this.player.play();
+  // }
 
 }

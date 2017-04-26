@@ -1,8 +1,9 @@
 import { MdDialog } from '@angular/material';
 import { Component, OnInit } from '@angular/core';
-import { PublisherAlbumEditSongDialogComponent } from "app/publisher/publisher-album-edit-song-dialog/publisher-album-edit-song-dialog.component";
-import { PublisherAlbumAddSongDialogComponent } from "app/publisher/publisher-album-add-song-dialog/publisher-album-add-song-dialog.component";
-import { PublisherAlbumDeleteAlbumDialogComponent } from "app/publisher/publisher-album-delete-album-dialog/publisher-album-delete-album-dialog.component";
+import { PublisherAlbumDeleteSongDialogComponent } from "app/publisher/publisher-album/publisher-album-delete-song-dialog/publisher-album-delete-song-dialog.component";
+import { PublisherAlbumAddSongDialogComponent } from "app/publisher/publisher-album/publisher-album-add-song-dialog/publisher-album-add-song-dialog.component";
+import { PublisherAlbumDeleteAlbumDialogComponent } from "app/publisher/publisher-album/publisher-album-delete-album-dialog/publisher-album-delete-album-dialog.component";
+import { PublisherAlbumChangeNameDialogComponent } from './publisher-album-change-name-dialog/publisher-album-change-name-dialog.component';
 
 @Component({
   selector: 'app-publisher-album',
@@ -15,8 +16,8 @@ export class PublisherAlbumComponent implements OnInit {
 
   ngOnInit() {
   }
-  editSongOpenDialog() {
-    let dialofRef = this.dialog.open(PublisherAlbumEditSongDialogComponent);
+  deleteSongOpenDialog() {
+    let dialofRef = this.dialog.open(PublisherAlbumDeleteSongDialogComponent);
     dialofRef.afterClosed().subscribe(s => console.log(s))
   }
   addSongOpenDialog() {
@@ -25,6 +26,10 @@ export class PublisherAlbumComponent implements OnInit {
   }
   deleteAlbumOpenDialog() {
     let dialofRef = this.dialog.open(PublisherAlbumDeleteAlbumDialogComponent);
+    dialofRef.afterClosed().subscribe(s => console.log(s))
+  }
+  changeAlbumNameOpenDialog() {
+    let dialofRef = this.dialog.open(PublisherAlbumChangeNameDialogComponent);
     dialofRef.afterClosed().subscribe(s => console.log(s))
   }
 

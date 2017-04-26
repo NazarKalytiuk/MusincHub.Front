@@ -6,7 +6,13 @@
     <span>{{ title }}</span>
   </a>
   <div style="display:flex; flex: 1 1 auto;"></div>
-  <button md-icon-button>
+  <button md-icon-button [mdMenuTriggerFor]="appMenu">
       <md-icon>more_vert</md-icon>
   </button>
 </nav>
+
+
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item routerLink="/login" (click)='navigateToLogin()'> Login </button>
+  <button md-menu-item routerLink="/signup" (click)='navigateToSignUp()'> SignUp </button>
+</md-menu>

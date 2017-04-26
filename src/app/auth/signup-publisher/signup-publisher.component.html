@@ -1,0 +1,21 @@
+<md-card>
+  <md-card-title>Sign Up</md-card-title>
+  <form>
+    <md-input-container>
+      <input mdInput placeholder="Email" type="email">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Пароль" type="password">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Повторити пароль" type="password">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Виконавець" type="text">
+    </md-input-container>
+  </form>
+  <md-card-actions style="padding: 15px; display: flex; justify-content: flex-end">
+    <button md-raised-button color="warn" routerLink="/signup">I`m a Consumer</button>
+    <button md-raised-button color="accent" (click)='SignUp()'>SignUp</button>
+  </md-card-actions>
+</md-card>

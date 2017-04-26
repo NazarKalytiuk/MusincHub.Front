@@ -1,17 +1,17 @@
 <md-card>
-  <md-card-title style="display:flex;align-items:center">Name
+  <md-card-title style="display:flex;align-items:center">{{playlist?.name}}
     <button (click)="play(songs[0])" md-icon-button><md-icon>play_arrow</md-icon></button>
-    </md-card-title>
-  <md-nav-list *ngFor="let item of songs" >
+  </md-card-title>
+  <md-nav-list *ngFor="let item of songs; let i = index;">
     <md-list-item style="display:flex;" *ngIf="item">
       <button color="warn" (click)="play(item)" md-icon-button>
-        <md-icon>{{ item?.IsPlaying ? 'pause_circle_filled' : 'play_circle_filled'}}</md-icon>
+        <md-icon>{{ item?.isPlaying ? 'pause_circle_filled' : 'play_circle_filled'}}</md-icon>
         </button>
-      <span style="opacity:0.54">{{item.Id}}.</span>
-      <p (click)="play(item)">{{item.Name}}</p>
+      <span style="opacity:0.54">{{i+1}}.</span>
+      <p (click)="play(item)">{{item.name}}</p>
       <div style="flex-grow:10"></div>
-      <span style="right:flex-end; opacity:0.54">{{item.Duration}}</span>
-      <button (click)="rate(item)"  md-icon-button><md-icon>thumb_up</md-icon></button>
+      <span style="right:flex-end; opacity:0.54">{{item.duration}}</span>
+      <button (click)="rate(item)" md-icon-button><md-icon>thumb_up</md-icon></button>
     </md-list-item>
   </md-nav-list>
 </md-card>

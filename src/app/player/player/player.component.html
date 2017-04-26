@@ -1,6 +1,6 @@
-<span>{{currentSong?.Name}}</span>
+<span>{{currentSong?.name}}</span>
 
-<audio controls (click)="onClick()" (ended)="onEnded()">
-  <source src="{{currentSong?.Url}}" type="audio/mpeg">
+<audio #audio controls (click)="onClick()" (ended)="onEnded()">
+  <source src="{{currentSong?.url}}" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>

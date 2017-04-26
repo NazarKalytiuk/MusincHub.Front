@@ -1,4 +1,4 @@
-import { Song } from '../_model/song';
+import { Song } from '../../core/models/song';
 import { BehaviorSubject, Observable, Subject } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 
@@ -19,9 +19,9 @@ export class PlayerService {
 
   getMusic() {
     return [
-    <Song>{ Id: "1", Name: "Alma - Requime", Duration: "3:03", Url: "../src/Alma-Requiem.mp3", IsPlaying : false },
-    <Song>{ Id: "2", Name: "Eminen - Lose Yourself", Duration: "5:26", Url: "../src/Eminem-Lose Yourself.mp3", IsPlaying : false },
-    <Song>{ Id: "3", Name: "FloRida - My House", Duration: "3:12", Url: "../src/FloRida-MyHouse.mp3", IsPlaying : false }
+    <Song>{ id: "1", name: "Alma - Requime", duration: "3:03", url: "../src/Alma-Requiem.mp3", isPlaying : false },
+    <Song>{ id: "2", name: "Eminen - Lose Yourself", duration: "5:26", url: "../src/Eminem-Lose Yourself.mp3", isPlaying : false },
+    <Song>{ id: "3", name: "FloRida - My House", duration: "3:12", url: "../src/FloRida-MyHouse.mp3", isPlaying : false }
   ]
   }
 

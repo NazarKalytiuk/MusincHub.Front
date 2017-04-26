@@ -1,9 +1,13 @@
 <md-card>
-  <md-card-title>Списки відтворень</md-card-title>
-  <md-nav-list>
-    <md-list-item>
-      <span style="opacity:0.54">1.</span>
-      <p>Назва</p>
+  <md-card-title style="display: flex;align-items: center;"> <span>Списки відтворень </span>
+    <button color="warn" (click)="addNew()" md-icon-button>
+        <md-icon>add</md-icon>
+        </button>
+  </md-card-title>
+  <md-nav-list *ngFor="let item of playlists; let i = index;">
+    <md-list-item routerLink='/consumer/playlist/{{item.id}}'>
+      <span style="opacity:0.54">{{i + 1}}.</span>
+      <p>{{item.name}}</p>
       <div style="flex-grow:10"></div>
       <span style="right:flex-end; opacity:0.54">11</span>
     </md-list-item>

@@ -1,39 +1,37 @@
 <md-card>
   <md-card-title>Playlists</md-card-title>
-  <md-nav-list>
-    <md-list-item>
-      <span style="opacity:0.54">1.</span>
-      <p>Name</p>
-      <span>-</span>
+  <md-nav-list *ngFor="let item of playlists; let i = index;">
+    <md-list-item routerLink='/consumer/playlist/{{item.id}}'>
+      <span style="opacity:0.54">{{i + 1}}.</span>
+      <p>{{item.name}}</p>
       <div style="flex-grow:10"></div>
-      <span style="right:flex-end; opacity:0.54">56</span>
-    </md-list-item>
-    <md-list-item>
-      <span style="opacity:0.54">2.</span>
-      <p>Nam12312e</p>
-      <div style="flex-grow:10"></div>
-      <span style="right:flex-end; opacity:0.54">33</span>
+      <span style="right:flex-end; opacity:0.54">11</span>
     </md-list-item>
   </md-nav-list>
 </md-card>
 <md-card>
   <md-card-title>Top Albums</md-card-title>
-  <md-nav-list>
-    <md-list-item>
-      <span style="opacity:0.54">1.</span>
-      <p>Name</p>
+  <md-nav-list *ngFor="let item of topAlbums; let i = index;">
+    <md-list-item  routerLink='/consumer/album/{{item.id}}'>
+      <span style="opacity:0.54">{{i + 1}}.</span>
+      <p>{{item.name}}</p>
       <span>-</span>
       <p style="opacity:0.54">56</p>
       <div style="flex-grow:10"></div>
-      <span style="right:flex-end; opacity:0.54">3.986</span>
+      <span style="right:flex-end; opacity:0.54">{{item.rating}}</span>
     </md-list-item>
-    <md-list-item>
-      <span style="opacity:0.54">2.</span>
-      <p>Nam12312e</p>
+  </md-nav-list>
+</md-card>
+<md-card>
+  <md-card-title>Top Authors</md-card-title>
+  <md-nav-list *ngFor="let item of topAuthors; let i = index;">
+    <md-list-item  routerLink='/consumer/author/{{item.id}}'>
+      <span style="opacity:0.54">{{i + 1}}.</span>
+      <p>{{item.name}}</p>
       <span>-</span>
-      <p style="opacity:0.54">562</p>
+      <p style="opacity:0.54">56</p>
       <div style="flex-grow:10"></div>
-      <span style="right:flex-end; opacity:0.54">33.986</span>
+      <span style="right:flex-end; opacity:0.54">{{item.rating}}</span>
     </md-list-item>
   </md-nav-list>
 </md-card>

@@ -1,32 +1,24 @@
 <md-card>
   <md-card-title style="display:flex;">
-    <span style="display:flex;align-self:center">Name Surname</span>
+    <span style="display:flex;align-self:center">{{author?.name}} {{author?.surname}}</span>
     <div style="flex-grow:10"></div>
     <span style="display:flex;align-items:center">
       <md-icon style="align-self:center">star</md-icon>
-      <span style="font-size: 20px;">35.498</span>
+      <span style="font-size: 20px;">{{author?.rating}}</span>
     </span>
   </md-card-title>
 </md-card>
 
 <md-card>
   <md-card-title>Albums</md-card-title>
-  <md-nav-list>
-    <md-list-item>
-      <span style="opacity:0.54">1.</span>
-      <p>Name</p>
+  <md-nav-list *ngFor="let item of albums; let i = index;">
+    <md-list-item routerLink="/consumer/album/{{item.id}}">
+      <span style="opacity:0.54">{{i + 1}}.</span>
+      <p>{{item.name}}</p>
       <span>-</span>
       <p style="opacity:0.54">56</p>
       <div style="flex-grow:10"></div>
-      <span style="right:flex-end; opacity:0.54">3.986</span>
-    </md-list-item>
-    <md-list-item>
-      <span style="opacity:0.54">2.</span>
-      <p>Nam12312e</p>
-      <span>-</span>
-      <p style="opacity:0.54">562</p>
-      <div style="flex-grow:10"></div>
-      <span style="right:flex-end; opacity:0.54">33.986</span>
+      <span style="right:flex-end; opacity:0.54">{{item.rating}}</span>
     </md-list-item>
   </md-nav-list>
 </md-card>

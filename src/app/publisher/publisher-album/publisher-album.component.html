@@ -1,23 +1,29 @@
 <md-card>
   <md-card-title style="display:flex; align-items:center">
-    Name<button (click)="editSongOpenDialog()" md-icon-button><md-icon>edit</md-icon></button>
+    Name<button (click)="changeAlbumNameOpenDialog()" md-icon-button><md-icon>edit</md-icon></button>
     <div style="flex-grow:10"></div>
     <md-icon>star</md-icon> <span style="font-size: 20px;">35.498</span>
   </md-card-title>
   <md-nav-list>
     <md-list-item>
+      <button color="primary" (click)="play(item)" md-icon-button>
+        <md-icon>{{ item?.IsPlaying ? 'pause_circle_filled' : 'play_circle_filled'}}</md-icon>
+        </button>
       <span style="opacity:0.54">1.</span>
       <p>Name</p>
       <div style="flex-grow:10"></div>
       <span style="right:flex-end; opacity:0.54">3:45</span>
-      <button (click)="editSongOpenDialog()" md-icon-button><md-icon>edit</md-icon></button>
+      <button (click)="deleteSongOpenDialog()" md-icon-button><md-icon>clear</md-icon></button>
     </md-list-item>
     <md-list-item>
-      <span style="opacity:0.54">1.</span>
+      <button color="primary" (click)="play(item)" md-icon-button>
+        <md-icon>{{ item?.IsPlaying ? 'pause_circle_filled' : 'play_circle_filled'}}</md-icon>
+        </button>
+      <span style="opacity:0.54">2.</span>
       <p>Namessssssssssssssssss</p>
       <div style="flex-grow:10"></div>
       <span style="right:flex-end; opacity:0.54">3:45</span>
-      <button (click)="editSongOpenDialog()" md-icon-button><md-icon>edit</md-icon></button>
+      <button (click)="deleteSongOpenDialog()" md-icon-button><md-icon>clear</md-icon></button>
     </md-list-item>
   </md-nav-list>
   <md-card-actions style="padding: 15px; display: flex; justify-content: flex-end">

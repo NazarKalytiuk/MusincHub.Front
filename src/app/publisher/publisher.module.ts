@@ -5,10 +5,10 @@ import { PublisherAlbumComponent } from './publisher-album/publisher-album.compo
 import { PublisherComponent } from './publisher/publisher.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PublisherAlbumAddSongDialogComponent } from './publisher-album-add-song-dialog/publisher-album-add-song-dialog.component';
-import { PublisherAlbumEditSongDialogComponent } from './publisher-album-edit-song-dialog/publisher-album-edit-song-dialog.component';
-import { PublisherAlbumDeleteAlbumDialogComponent } from './publisher-album-delete-album-dialog/publisher-album-delete-album-dialog.component';
-import { PublisherAlbumChangeNameDialogComponent } from './publisher-album-change-name-dialog/publisher-album-change-name-dialog.component';
+import { PublisherAlbumAddSongDialogComponent } from './publisher-album/publisher-album-add-song-dialog/publisher-album-add-song-dialog.component';
+import { PublisherAlbumDeleteSongDialogComponent } from './publisher-album/publisher-album-delete-song-dialog/publisher-album-delete-song-dialog.component';
+import { PublisherAlbumDeleteAlbumDialogComponent } from './publisher-album/publisher-album-delete-album-dialog/publisher-album-delete-album-dialog.component';
+import { PublisherAlbumChangeNameDialogComponent } from './publisher-album/publisher-album-change-name-dialog/publisher-album-change-name-dialog.component';
 
 @NgModule({
   imports: [
@@ -24,14 +24,15 @@ import { PublisherAlbumChangeNameDialogComponent } from './publisher-album-chang
   entryComponents: [
     PublisherAlbumAddSongDialogComponent,
     PublisherAlbumDeleteAlbumDialogComponent,
-    PublisherAlbumEditSongDialogComponent,
+    PublisherAlbumDeleteSongDialogComponent,
+    PublisherAlbumChangeNameDialogComponent
   ],
   declarations: [
     PublisherComponent,
     PublisherAlbumComponent,
     PublisherAlbumListComponent,
     PublisherAlbumAddSongDialogComponent,
-    PublisherAlbumEditSongDialogComponent,
+    PublisherAlbumDeleteSongDialogComponent,
     PublisherAlbumDeleteAlbumDialogComponent,
     PublisherAlbumChangeNameDialogComponent,
   ]
